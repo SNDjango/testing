@@ -3,29 +3,22 @@
     {% include 'partials/header.html'%}
     <body id="main">
         {% include 'partials/navigation.html'%}
-    	{% csrf_token %}
-        <div>
-            <h1>Add new Item</h1>
-    		<form action="{% url 'add' %}" method="post">
+        <div style="width: 50%;margin: 0 auto;">
+            <h1>Login</h1>
+    		<form action="{% url 'login_page' %}" method="post">
+                {% csrf_token %}
     			<div class="form-group">
-    				<label for="title">Item</label>
-    				<input type="text" class="form-control" name="title" id="title" maxlength="160" placeholder="Name">
+    				<label for="user">User Name</label>
+    				<input type="text" class="form-control" name="user" id="user" maxlength="16" placeholder="Name">
     			</div>
     			<div class="form-group">
-    				<label for="description">Description</label>
-    				<input type="text" class="form-control" name="description" id="description" maxlength="160" placeholder="max. 160 characters">
-    			</div>
-    			<div>
-    				<label for="progress">Progress</label>
-    				<input type="text" class="form-control" name="progress" id="progress" min="0" max="100" placeholder="%">
+    				<label for="pwd">Password</label>
+    				<input type="password" class="form-control" name="pwd" id="pwd" maxlength="160">
     			</div>
     			<div id="lower-btn">
-    				<button type="submit" class="btn btn-success" value="Submit">Add</button>
-    				<a href="index.html" style="margin-top:20px;" class="btn btn-danger">Cancel</a>
+    				<button type="submit" class="btn btn-success" value="Submit">Login</button>
     			</div>
-
     		</form>
 		</div>
-
     </body>
 </html>
